@@ -1,0 +1,6 @@
+{
+  "name": "Plantify",
+  "description": "An immersive, cinematic culinary journey with organic minimalist styling and interactive 3D motion layouts.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

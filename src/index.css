@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Libre Baskerville", Georgia, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --font-cairo: "Cairo", sans-serif;
+  --font-alexandria: "Alexandria", sans-serif;
+  --font-almarai: "Almarai", sans-serif;
+  
+  --color-brand: #0BA486;
+  --color-brand-hover: #12C2A2;
+  --color-brand-active: #054B3E;
+  --color-accent-warm: #F3C395;
+  --color-accent-rose: #E5BDB4;
+  --color-neutral-dark: #F7EFE9;
+  --color-bg-main: #0A0F0D;
+  --color-bg-alt: #121815;
+  
+  --animate-letter-reveal: letterReveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-subtle-spin: spinSlow 40s linear infinite;
+  --animate-organic-float: floatSlow 8s ease-in-out infinite;
+  --animate-float: float 6s ease-in-out infinite;
+}
+
+@keyframes letterReveal {
+  0% {
+    letter-spacing: 0.2em;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    letter-spacing: -0.01em;
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes spinSlow {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-18px) rotate(3deg);
+  }
+}
+
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-15px) rotate(3deg);
+  }
+}
+
+/* Custom 3D perspectives and transitions */
+.perspective-3d {
+  perspective: 1200px;
+}
+
+.card-3d-tilt {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.3s;
+  transform-style: preserve-3d;
+}
+
+.card-3d-tilt:hover {
+  transform: perspective(1000px) translateY(-6px) rotateX(4deg) rotateY(-2deg);
+  box-shadow: 0 20px 40px rgba(11, 164, 134, 0.12);
+}
+
+/* Base resets & scroll behavior */
+html, body {
+  background-color: #0A0F0D;
+  color: #E2EAE5;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar matching organic minimal branding */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0A0F0D;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #0BA486;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #12C2A2;
+}
+
+/* Custom organic blur lighting spots */
+.organic-blur-spot {
+  filter: blur(100px);
+  opacity: 0.22;
+  pointer-events: none;
+}
+
+@keyframes liquidWave {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-15%) scaleY(0.96);
+  }
+  100% {
+    transform: translateX(-30%);
+  }
+}
+
+.animate-liquid-wave-1 {
+  animation: liquidWave 8s ease-in-out infinite;
+}
+
+.animate-liquid-wave-2 {
+  animation: liquidWave 6s ease-in-out infinite;
+}
+
+/* ════════════════════════════════════════════════════════════ */
+/* 🇵🇸 PREMIUM ARABIC TYPOGRAPHY & RTL SUPPORT                 */
+/* ════════════════════════════════════════════════════════════ */
+
+.lang-ar {
+  font-family: "Cairo", sans-serif !important;
+}
+
+.lang-ar h1, 
+.lang-ar h2, 
+.lang-ar h3, 
+.lang-ar h4, 
+.lang-ar h5, 
+.lang-ar h6,
+.lang-ar .font-serif {
+  font-family: "Alexandria", sans-serif !important;
+  font-weight: 600;
+}
+
+.lang-ar .font-mono,
+.lang-ar .font-mono-data,
+.lang-ar code {
+  font-family: "Almarai", sans-serif !important;
+  font-weight: 500;
+}
+
+/* RTL Helpers for Icons and Placements */
+html[dir="rtl"] .lucide {
+  transform: scaleX(1);
+}
+
+html[dir="rtl"] .lucide-arrow-right,
+html[dir="rtl"] .lucide-arrow-left,
+html[dir="rtl"] .lucide-chevron-right,
+html[dir="rtl"] .lucide-chevron-left {
+  transform: scaleX(-1);
+}
+
+/* Adjust tracking (letter-spacing) which looks too spaced out in Arabic */
+.lang-ar .tracking-widest,
+.lang-ar .tracking-wider,
+.lang-ar .tracking-tight {
+  letter-spacing: 0px !important;
+}
+
+
+
